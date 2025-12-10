@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Projet - Vizille en Mouvement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>:root { --font-main: 'Source Sans 3', sans-serif; }</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><span class="logo-icon">V</span> Vizille en Mouvement</a>
+      <button class="menu-toggle">☰</button>
+      <nav><ul id="nav-menu">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="bilan.html">Le Bilan</a></li>
+        <li><a href="projet.html" class="active">Notre Projet</a></li>
+        <li><a href="equipe.html">L'Équipe</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Notre Projet 2026-2032</h1>
+      <p class="lead">Ensemble pour une ville dynamique et solidaire</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 4rem 0;">
+        <div style="font-size: 4rem; margin-bottom: 2rem;">🚧</div>
+        <h2>Projet en cours d'élaboration</h2>
+        <p style="font-size: 1.1rem; color: var(--gray); margin: 1.5rem 0;">
+          Notre projet pour le prochain mandat est en cours de construction avec les habitants et les membres de l'équipe. Il sera présenté dans les prochaines semaines.
+        </p>
+        <p style="color: var(--gray);">
+          En attendant, découvrez notre bilan 2020-2026 et les valeurs qui guident notre action.
+        </p>
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="bilan.html" class="btn btn-primary">Voir le bilan</a>
+          <a href="equipe.html" class="btn btn-secondary">Notre charte</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Participez à la construction du projet</h2>
+      <p>Vos idées et propositions sont les bienvenues</p>
+      <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+    </div>
+  </section>
+
+  <footer><div class="container"><div class="footer-bottom"><p>© 2025 Vizille en Mouvement</p></div></div></footer>
+  <script>document.querySelector('.menu-toggle').addEventListener('click', function() { document.getElementById('nav-menu').classList.toggle('active'); });</script>
+</body>
+</html>
