@@ -18,6 +18,79 @@
     :root {
       --font-main: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
     }
+    
+    .hero-accueil {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 8rem 0 4rem;
+      margin-top: 75px;
+      text-align: center;
+    }
+    
+    .mot-section {
+      padding: 4rem 0;
+    }
+    
+    .mot-container {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+      .mot-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .portrait-wrapper {
+        order: -1;
+        text-align: center;
+      }
+      .portrait-wrapper img {
+        max-width: 200px;
+      }
+    }
+    
+    .mot-texte h2 {
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+    
+    .mot-texte p {
+      color: var(--dark);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    
+    .mot-texte .signature {
+      margin-top: 2rem;
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    .portrait-wrapper img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+    
+    .portrait-wrapper p {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 <body>
@@ -26,8 +99,7 @@
   <header>
     <div class="header-inner">
       <a href="index.html" class="logo">
-        <span class="logo-icon">V</span>
-        Vizille en Mouvement
+        <img src="images/logo.png" alt="Vizille en Mouvement" style="height: 45px;">
       </a>
       
       <button class="menu-toggle" aria-label="Menu">☰</button>
@@ -45,198 +117,49 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero-accueil">
     <div class="container">
-      <div class="hero-content">
-        <h1>Vizille en Mouvement</h1>
-        <p class="subtitle">Bilan du mandat 2020-2026</p>
-        <p class="tagline">Ensemble pour une ville dynamique et solidaire</p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="pages/bilan.html" class="btn btn-primary">Découvrir le bilan</a>
-          <a href="https://mich59139.github.io/test2/" target="_blank" class="btn btn-outline">Explorer les données ↗</a>
-        </div>
-      </div>
+      <img src="images/logo.png" alt="Vizille en Mouvement" style="max-width: 320px; margin-bottom: 1rem;">
+      <p style="font-size: 1.3rem; opacity: 0.9;">Ensemble pour une ville dynamique et solidaire</p>
     </div>
   </section>
 
-  <!-- CHIFFRES CLÉS -->
-  <section>
+  <!-- MOT DE LA TÊTE DE LISTE -->
+  <section class="mot-section">
     <div class="container">
-      <div class="stats">
-        <div class="stat-card">
-          <div class="stat-number">330+</div>
-          <div class="stat-label">Actions réalisées</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">15 M€</div>
-          <div class="stat-label">Investissements</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">12</div>
-          <div class="stat-label">Thématiques</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">6 ans</div>
-          <div class="stat-label">D'engagement</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- THEMATIQUES -->
-  <section style="background: var(--light);">
-    <div class="container">
-      <div class="section-title">
-        <h2>Les grandes thématiques</h2>
-        <p style="color: var(--gray); max-width: 600px; margin: 1.5rem auto 0;">Un mandat marqué par des investissements structurants, la gestion de crises et le lancement de projets d'avenir.</p>
-      </div>
-      
-      <div class="themes-grid">
+      <div class="mot-container">
         
-        <div class="theme-card">
-          <div class="theme-icon">🏗️</div>
-          <div class="theme-content">
-            <h3>Urbanisme & Aménagement</h3>
-            <p>Revitalisation du centre-ville, projet Alliance Textile, ORT, Centralité Vizilloise...</p>
-            <a href="pages/urbanisme.html" class="theme-link">En savoir plus →</a>
+        <div class="mot-texte">
+          <h2>Mot de la tête de liste</h2>
+          
+          <p>Chères Vizilloises, chers Vizillois,</p>
+          
+          <p>Depuis 2020, nous avons traversé ensemble des moments difficiles. La crise sanitaire d'abord, puis la fermeture de Vencorex qui a touché tant de familles de notre bassin. Face à ces épreuves, nous avons fait le choix de la solidarité et du maintien des investissements.</p>
+          
+          <p>Nous n'avons pas été élus pour assister impuissants au déclin de notre ville, mais pour agir. Agir pour le cadre de vie avec la transformation du centre-ville, agir pour la santé avec la future Maison de santé que nous avons reprise en main après l'échec du projet privé, agir pour l'environnement avec le réseau de chaleur et la végétalisation de nos espaces publics.</p>
+          
+          <p>Ce bilan, c'est avant tout le vôtre. Celui des agents municipaux engagés au quotidien, des associations qui font vivre notre ville, des habitants qui participent aux concertations et s'investissent pour Vizille.</p>
+          
+          <p>Nous aimons notre ville, nous y vivons et nous y sommes heureux. Loin des critiques faciles sur les réseaux sociaux, nous avons choisi d'avancer, de construire, de préparer l'avenir.</p>
+          
+          <p>Avec l'ensemble de l'équipe municipale, nous vous présentons ici le travail accompli depuis cinq ans. Plus de 330 actions concrètes qui changent le quotidien des Vizillois.</p>
+          
+          <p>Ensemble, continuons à faire bouger Vizille.</p>
+          
+          <p class="signature">Catherine Troton<br>Maire de Vizille, tête de liste</p>
+          
+          <div class="cta-buttons">
+            <a href="pages/bilan.html" class="btn btn-primary">Découvrir le bilan</a>
+            <a href="pages/equipe.html" class="btn btn-secondary">L'équipe</a>
           </div>
         </div>
         
-        <div class="theme-card">
-          <div class="theme-icon">🏥</div>
-          <div class="theme-content">
-            <h3>Santé & Services</h3>
-            <p>Maison de Santé Pluriprofessionnelle, CLSM, Plan Communal de Sauvegarde, PIMMS...</p>
-            <a href="pages/sante.html" class="theme-link">En savoir plus →</a>
-          </div>
-        </div>
-        
-        <div class="theme-card">
-          <div class="theme-icon">🌿</div>
-          <div class="theme-content">
-            <h3>Environnement</h3>
-            <p>Réseau de chaleur urbain, éclairage LED (-51%), ZFE, compostage, plantation forestière...</p>
-            <a href="pages/environnement.html" class="theme-link">En savoir plus →</a>
-          </div>
-        </div>
-        
-        <div class="theme-card">
-          <div class="theme-icon">🎭</div>
-          <div class="theme-content">
-            <h3>Culture & Vie associative</h3>
-            <p>Festival du Film pour Enfants, Estivales, Street Art, médiathèque gratuite...</p>
-            <a href="pages/culture.html" class="theme-link">En savoir plus →</a>
-          </div>
-        </div>
-        
-        <div class="theme-card">
-          <div class="theme-icon">🏛️</div>
-          <div class="theme-content">
-            <h3>Patrimoine & Histoire</h3>
-            <p>Prieuré, orgue restauré, parcours patrimoniaux, chapelle du Péage, AHPV...</p>
-            <a href="pages/patrimoine.html" class="theme-link">En savoir plus →</a>
-          </div>
-        </div>
-        
-        <div class="theme-card">
-          <div class="theme-icon">👶</div>
-          <div class="theme-content">
-            <h3>Enfance & Jeunesse</h3>
-            <p>Crèche rénovée (+4 places), petits déjeuners scolaires, équipement numérique...</p>
-            <a href="pages/enfance.html" class="theme-link">En savoir plus →</a>
-          </div>
-        </div>
-        
-        <div class="theme-card">
-          <div class="theme-icon">🤝</div>
-          <div class="theme-content">
-            <h3>Solidarité & Action sociale</h3>
-            <p>CCAS renforcé, épicerie sociale, soutien Vencorex, portage de repas (+32%)...</p>
-            <a href="pages/solidarite.html" class="theme-link">En savoir plus →</a>
-          </div>
-        </div>
-        
-        <div class="theme-card">
-          <div class="theme-icon">⚽</div>
-          <div class="theme-content">
-            <h3>Sport & Loisirs</h3>
-            <p>Stade homologué Fédérale 3, soutien aux associations, nautisme scolaire...</p>
-            <a href="pages/sport.html" class="theme-link">En savoir plus →</a>
-          </div>
-        </div>
-        
-        <div class="theme-card">
-          <div class="theme-icon">💼</div>
-          <div class="theme-content">
-            <h3>Économie & Emploi</h3>
-            <p>Soutien au commerce local, insertion professionnelle, partenariat Mission Locale...</p>
-            <a href="pages/economie.html" class="theme-link">En savoir plus →</a>
-          </div>
+        <div class="portrait-wrapper">
+          <img src="images/maire.png" alt="Catherine Troton">
+          <p>Catherine Troton</p>
         </div>
         
       </div>
-    </div>
-  </section>
-
-  <!-- PROJETS PHARES -->
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <h2>Les projets structurants</h2>
-      </div>
-      
-      <div class="themes-grid" style="grid-template-columns: repeat(2, 1fr);">
-        
-        <div class="action-item">
-          <h4>🏥 Maison de Santé Pluriprofessionnelle</h4>
-          <p>Face à la pénurie médicale, la Ville a repris le pilotage du projet. Acquisition foncière actée, construction prévue pour répondre aux besoins de santé du territoire.</p>
-          <div class="action-meta">
-            <span class="status-badge status-encours">En cours</span>
-            <span>📍 Avenue de Venaria</span>
-          </div>
-        </div>
-        
-        <div class="action-item">
-          <h4>🔥 Réseau de chaleur urbain</h4>
-          <p>Production de 8,7 GWh/an avec 85% d'énergies renouvelables (bois). Investissement de 7,9 M€ pour une énergie locale et durable.</p>
-          <div class="action-meta">
-            <span class="status-badge status-encours">Voté</span>
-            <span>💰 7,9 M€</span>
-          </div>
-        </div>
-        
-        <div class="action-item">
-          <h4>🏘️ Alliance Textile</h4>
-          <p>28 logements publics et un supermarché sur l'ancien site Netto. Première pierre posée en octobre 2024, livraison prévue T2 2026.</p>
-          <div class="action-meta">
-            <span class="status-badge status-encours">En construction</span>
-            <span>🏠 28 logements</span>
-          </div>
-        </div>
-        
-        <div class="action-item">
-          <h4>🌆 Centralité Vizilloise (ORT)</h4>
-          <p>Programme de transformation du centre-ville à horizon 2030 : Tanneries/CROS, rue de Gaulle piétonnisée, place du Jeu de Paume végétalisée.</p>
-          <div class="action-meta">
-            <span class="status-badge status-encours">En cours</span>
-            <span>📅 Horizon 2030</span>
-          </div>
-        </div>
-        
-      </div>
-      
-      <div class="text-center mt-2">
-        <a href="https://mich59139.github.io/test2/" target="_blank" class="btn btn-primary">Voir toutes les actions →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ensemble pour Vizille</h2>
-      <p>Découvrez l'ensemble des 330+ actions réalisées pendant le mandat 2020-2026</p>
-      <a href="https://mich59139.github.io/test2/" target="_blank" class="btn btn-outline">Explorer le tableau de bord complet ↗</a>
     </div>
   </section>
 
@@ -246,9 +169,8 @@
       <div class="footer-grid">
         
         <div class="footer-brand">
-          <div class="logo">
-            <span class="logo-icon">V</span>
-            Vizille en Mouvement
+          <div class="logo" style="color: white;">
+            <img src="images/logo.png" alt="Vizille en Mouvement" style="height: 40px; filter: brightness(0) invert(1);">
           </div>
           <p style="margin-top: 1rem;">
             Liste citoyenne pour les élections municipales 2026.<br>
@@ -256,7 +178,6 @@
           </p>
           <div class="social-links">
             <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Twitter">𝕏</a>
             <a href="#" aria-label="Instagram">◉</a>
           </div>
         </div>
@@ -272,7 +193,7 @@
         </div>
         
         <div>
-          <h4>Thématiques</h4>
+          <h4>Le Bilan</h4>
           <ul>
             <li><a href="pages/urbanisme.html">Urbanisme</a></li>
             <li><a href="pages/environnement.html">Environnement</a></li>
@@ -300,7 +221,6 @@
 
   <!-- JS -->
   <script>
-    // Mobile menu toggle
     document.querySelector('.menu-toggle').addEventListener('click', function() {
       document.getElementById('nav-menu').classList.toggle('active');
     });
