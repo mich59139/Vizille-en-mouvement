@@ -19,16 +19,107 @@
       --font-main: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
-    .hero-accueil {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-      color: var(--white);
-      padding: 8rem 0 4rem;
+    /* HERO AVEC PHOTO PANORAMIQUE */
+    .hero-banner {
+      position: relative;
+      min-height: 100vh;
       margin-top: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      overflow: hidden;
     }
     
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/vizille-panorama.png') center center / cover no-repeat;
+      z-index: 1;
+    }
+    
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(26, 82, 118, 0.7) 0%, rgba(14, 58, 82, 0.85) 100%);
+      z-index: 2;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 2rem;
+    }
+    
+    .hero-logo {
+      max-width: 380px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+    }
+    
+    /* SLOGAN AVEC EFFET LUMIERE ET BATTEMENT */
+    .slogan {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+      margin: 1rem 0 2rem;
+      animation: heartbeat 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+    }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.05); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.03); }
+      60% { transform: scale(1); }
+    }
+    
+    @keyframes glow {
+      0%, 100% { 
+        text-shadow: 0 2px 20px rgba(255,255,255,0.3), 0 0 40px rgba(255,255,255,0.1);
+      }
+      50% { 
+        text-shadow: 0 2px 30px rgba(255,255,255,0.6), 0 0 60px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.1);
+      }
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 2rem;
+    }
+    
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      color: white;
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+    
+    /* SECTION MOT */
     .mot-section {
-      padding: 4rem 0;
+      padding: 5rem 0;
+      background: #fff;
     }
     
     .mot-container {
@@ -52,17 +143,25 @@
       .portrait-wrapper img {
         max-width: 200px;
       }
-    }
-    
-    .mot-texte h2 {
-      margin-bottom: 1.5rem;
-      color: var(--primary);
+      .slogan {
+        font-size: 1.6rem;
+      }
+      .hero-logo {
+        max-width: 280px;
+      }
     }
     
     .mot-texte p {
       color: var(--dark);
-      line-height: 1.8;
-      margin-bottom: 1rem;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+    
+    .mot-texte .intro {
+      font-size: 1.15rem;
+      color: var(--primary);
+      font-weight: 500;
     }
     
     .mot-texte .signature {
@@ -70,6 +169,7 @@
       font-style: italic;
       color: var(--primary);
       font-weight: 600;
+      font-size: 1.1rem;
     }
     
     .portrait-wrapper img {
@@ -95,6 +195,73 @@
 </head>
 <body>
 
+  <!-- PROTECTION MOT DE PASSE -->
+  <div id="password-screen" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a5276 0%, #0e3a52 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  ">
+    <div style="
+      background: white;
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      max-width: 400px;
+      width: 90%;
+    ">
+      <img src="images/logo.png" alt="Vizille en Mouvement" style="max-width: 200px; margin-bottom: 1.5rem;">
+      <p style="color: #666; margin-bottom: 1.5rem;">Site en cours de construction<br>Accès réservé</p>
+      <input type="password" id="password-input" placeholder="Mot de passe" style="
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+      ">
+      <button onclick="checkPassword()" style="
+        width: 100%;
+        padding: 0.8rem;
+        background: #1a5276;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+      ">Accéder</button>
+      <p id="error-msg" style="color: #e74c3c; margin-top: 1rem; display: none;">Mot de passe incorrect</p>
+    </div>
+  </div>
+
+  <script>
+    if (sessionStorage.getItem('vizille-auth') === 'ok') {
+      document.getElementById('password-screen').style.display = 'none';
+    }
+    
+    function checkPassword() {
+      var pwd = document.getElementById('password-input').value;
+      if (pwd === 'Vizille@') {
+        sessionStorage.setItem('vizille-auth', 'ok');
+        document.getElementById('password-screen').style.display = 'none';
+      } else {
+        document.getElementById('error-msg').style.display = 'block';
+      }
+    }
+    
+    document.getElementById('password-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') checkPassword();
+    });
+  </script>
+
   <!-- HEADER -->
   <header>
     <div class="header-inner">
@@ -116,23 +283,23 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero-accueil">
-    <div class="container">
-      <img src="images/logo.png" alt="Vizille en Mouvement" style="max-width: 320px; margin-bottom: 1rem;">
-      <p style="font-size: 1.3rem; opacity: 0.9;">Ensemble pour une ville dynamique et solidaire</p>
+  <!-- HERO AVEC BANNIÈRE PANORAMIQUE -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
+      <p class="slogan">Ensemble pour une ville dynamique et solidaire</p>
+      <p class="hero-subtitle">Élections municipales 2026</p>
     </div>
+    <div class="scroll-indicator" onclick="document.querySelector('.mot-section').scrollIntoView({behavior: 'smooth'})">↓</div>
   </section>
 
-  <!-- MOT DE LA TÊTE DE LISTE -->
+  <!-- MOT DE LA CANDIDATE -->
   <section class="mot-section">
     <div class="container">
       <div class="mot-container">
         
         <div class="mot-texte">
-          <h2>Mot de la tête de liste</h2>
-          
-          <p>Chères Vizilloises, chers Vizillois,</p>
+          <p class="intro">Chères Vizilloises, chers Vizillois,</p>
           
           <p>Depuis 2020, nous avons traversé ensemble des moments difficiles. La crise sanitaire d'abord, puis la fermeture de Vencorex qui a touché tant de familles de notre bassin. Face à ces épreuves, nous avons fait le choix de la solidarité et du maintien des investissements.</p>
           
@@ -140,13 +307,11 @@
           
           <p>Ce bilan, c'est avant tout le vôtre. Celui des agents municipaux engagés au quotidien, des associations qui font vivre notre ville, des habitants qui participent aux concertations et s'investissent pour Vizille.</p>
           
-          <p>Nous aimons notre ville, nous y vivons et nous y sommes heureux. Loin des critiques faciles sur les réseaux sociaux, nous avons choisi d'avancer, de construire, de préparer l'avenir.</p>
+          <p>Nous aimons notre ville, nous y vivons et nous y sommes heureux. Loin des critiques faciles sur les réseaux sociaux, nous avons choisi d'avancer, de construire, de préparer l'avenir. Plus de 330 actions concrètes ont été menées durant ce mandat pour changer le quotidien des Vizillois.</p>
           
-          <p>Avec l'ensemble de l'équipe municipale, nous vous présentons ici le travail accompli depuis cinq ans. Plus de 330 actions concrètes qui changent le quotidien des Vizillois.</p>
+          <p>Ensemble, continuons à construire un avenir prometteur pour Vizille, fondé sur des solutions réalistes et une gestion responsable. C'est avec cette ambition et cette détermination que nous nous présentons devant vous pour poursuivre le travail engagé.</p>
           
-          <p>Ensemble, continuons à faire bouger Vizille.</p>
-          
-          <p class="signature">Catherine Troton<br>Maire de Vizille, tête de liste</p>
+          <p class="signature">Catherine Troton<br>Maire de Vizille</p>
           
           <div class="cta-buttons">
             <a href="pages/bilan.html" class="btn btn-primary">Découvrir le bilan</a>

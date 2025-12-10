@@ -10,6 +10,14 @@
   <style>:root { --font-main: 'Source Sans 3', sans-serif; }</style>
 </head>
 <body>
+
+  <!-- PROTECTION MOT DE PASSE -->
+  <script>
+    if (sessionStorage.getItem('vizille-auth') !== 'ok') {
+      window.location.href = '../index.html';
+    }
+  </script>
+
   <header>
     <div class="header-inner">
       <a href="../index.html" class="logo"><span class="logo-icon">V</span> Vizille en Mouvement</a>
