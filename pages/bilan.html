@@ -14,19 +14,16 @@
 </head>
 <body>
 
-  <!-- PROTECTION MOT DE PASSE -->
   <script>
     if (sessionStorage.getItem('vizille-auth') !== 'ok') {
       window.location.href = '../index.html';
     }
   </script>
 
-
   <header>
     <div class="header-inner">
       <a href="../index.html" class="logo">
-        <span class="logo-icon">V</span>
-        Vizille en Mouvement
+        <img src="../images/logo.png" alt="Vizille en Mouvement" style="height: 40px;">
       </a>
       <button class="menu-toggle" aria-label="Menu">☰</button>
       <nav>
@@ -41,7 +38,12 @@
     </div>
   </header>
 
-  <section class="page-hero">
+  <!-- MINI BANDEAU SLOGAN -->
+  <div style="background: var(--primary); color: white; text-align: center; padding: 0.6rem; margin-top: 75px; font-size: 0.9rem; font-style: italic;">
+    Ensemble pour une ville dynamique et solidaire
+  </div>
+
+  <section class="page-hero" style="margin-top: 0;">
     <div class="container">
       <h1>Le Bilan 2020-2026</h1>
       <p class="lead">Un mandat marqué par des investissements structurants, la gestion de crises successives et le lancement de projets d'avenir pour Vizille.</p>
@@ -89,7 +91,6 @@
       </div>
       
       <div class="themes-grid">
-        
         <a href="urbanisme.html" class="theme-card" style="text-decoration: none; color: inherit;">
           <div class="theme-icon">🏗️</div>
           <div class="theme-content">
@@ -170,7 +171,6 @@
             <span class="theme-link">Découvrir →</span>
           </div>
         </a>
-        
       </div>
     </div>
   </section>
@@ -180,19 +180,6 @@
       <h2>Accéder aux données complètes</h2>
       <p>Explorez l'ensemble des 330+ actions dans notre tableau de bord interactif</p>
       <a href="https://mich59139.github.io/test2/" target="_blank" class="btn btn-outline">Ouvrir le tableau de bord ↗</a>
-    </div>
-  </section>
-
-  <section style="background: var(--light);">
-    <div class="container">
-      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h3>Sources</h3>
-        <p style="color: var(--gray);">
-          📰 Magazines « Vivre à Vizille » (n°120 à 171)<br>
-          📋 Délibérations du Conseil Municipal<br>
-          📊 Documents budgétaires 2020-2025
-        </p>
-      </div>
     </div>
   </section>
 

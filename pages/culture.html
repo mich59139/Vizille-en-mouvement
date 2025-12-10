@@ -14,19 +14,16 @@
 </head>
 <body>
 
-  <!-- PROTECTION MOT DE PASSE -->
   <script>
     if (sessionStorage.getItem('vizille-auth') !== 'ok') {
       window.location.href = '../index.html';
     }
   </script>
 
-
   <header>
     <div class="header-inner">
       <a href="../index.html" class="logo">
-        <span class="logo-icon">V</span>
-        Vizille en Mouvement
+        <img src="../images/logo.png" alt="Vizille en Mouvement" style="height: 40px;">
       </a>
       <button class="menu-toggle" aria-label="Menu">☰</button>
       <nav>
@@ -41,7 +38,12 @@
     </div>
   </header>
 
-  <section class="page-hero" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
+  <!-- MINI BANDEAU SLOGAN -->
+  <div style="background: var(--primary); color: white; text-align: center; padding: 0.6rem; margin-top: 75px; font-size: 0.9rem; font-style: italic;">
+    Ensemble pour une ville dynamique et solidaire
+  </div>
+
+  <section class="page-hero" style="margin-top: 0;" style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);">
     <div class="container">
       <p class="breadcrumb"><a href="../index.html">Accueil</a> / <a href="bilan.html">Bilan</a> / Culture</p>
       <h1>🎭 Culture & Vie associative</h1>
@@ -188,6 +190,5 @@
       document.getElementById('nav-menu').classList.toggle('active');
     });
   </script>
-
 </body>
 </html>
