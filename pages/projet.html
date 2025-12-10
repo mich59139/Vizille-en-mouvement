@@ -3,11 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notre Projet - Vizille en Mouvement</title>
+  <title>Notre Projet 2026-2032 - Vizille en Mouvement</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <style>:root { --font-main: 'Source Sans 3', sans-serif; }</style>
+  <style>
+    :root { --font-main: 'Source Sans 3', sans-serif; }
+    
+    .projet-intro {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    
+    .theme-section {
+      padding: 3rem 0;
+    }
+    
+    .theme-section:nth-child(even) {
+      background: var(--light);
+    }
+    
+    .theme-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .theme-header .icon {
+      font-size: 2.5rem;
+      background: var(--primary);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .theme-header h2 {
+      margin: 0;
+      color: var(--primary);
+    }
+    
+    .propositions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .proposition-card {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--accent);
+    }
+    
+    .proposition-card h4 {
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .proposition-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    .priorite {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .priorite-haute {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    
+    .priorite-moyenne {
+      background: #fef3c7;
+      color: #d97706;
+    }
+    
+    .priorite-continue {
+      background: #dbeafe;
+      color: #2563eb;
+    }
+  </style>
 </head>
 <body>
 
@@ -16,6 +108,7 @@
       window.location.href = '../index.html';
     }
   </script>
+
 
   <header>
     <div class="header-inner">
@@ -47,34 +140,371 @@
     </div>
   </section>
 
+  <!-- INTRO -->
   <section>
     <div class="container">
-      <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 3rem 0;">
-        <div style="font-size: 4rem; margin-bottom: 1.5rem;">🚧</div>
-        <h2>Projet en cours d'élaboration</h2>
-        <p style="font-size: 1.1rem; color: var(--gray); margin: 1.5rem 0;">
-          Notre projet pour le prochain mandat est en cours de construction avec les habitants et les membres de l'équipe. Il sera présenté dans les prochaines semaines.
+      <div class="projet-intro">
+        <p style="font-size: 1.2rem; color: var(--gray);">
+          <strong>Plus de 30 propositions concrètes</strong> pour continuer à faire avancer Vizille. Un projet construit avec les habitants, ancré dans le réalisme et tourné vers l'avenir.
         </p>
-        <p style="color: var(--gray);">
-          En attendant, découvrez notre bilan 2020-2026 et les valeurs qui guident notre action.
-        </p>
-        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a href="bilan.html" class="btn btn-primary">Voir le bilan</a>
-          <a href="equipe.html" class="btn btn-secondary">Notre charte</a>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- URBANISME -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">🏗️</div>
+        <h2>Urbanisme & Cadre de vie</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Poursuivre la transformation du centre-ville et améliorer le cadre de vie des quartiers.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Achever la Centralité Vizilloise</h4>
+          <p>Finaliser l'aménagement de la place du Château et poursuivre la requalification des voies adjacentes. Engager la rénovation de quartiers prioritaires.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Réhabiliter le quartier de la Gare</h4>
+          <p>Lancer une opération de requalification urbaine autour du pôle multimodal.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Embellir les entrées de ville</h4>
+          <p>Programme pluriannuel de végétalisation et signalétique des entrées Nord et Sud.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENVIRONNEMENT -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">🌿</div>
+        <h2>Environnement & Transition</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Accélérer la transition écologique et adapter Vizille au changement climatique.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Étendre le réseau de chaleur</h4>
+          <p>Raccorder 200 logements supplémentaires au réseau de chaleur bois pour réduire les émissions.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Plan Canopée</h4>
+          <p>Planter 500 arbres sur le mandat pour créer des îlots de fraîcheur dans tous les quartiers.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Photovoltaïque sur les toits publics</h4>
+          <p>Équiper les bâtiments municipaux de panneaux solaires pour l'autoconsommation.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Jardins partagés</h4>
+          <p>Créer de nouveaux espaces de jardinage collectif dans les quartiers avec composteurs partagés.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Zéro pesticide partout</h4>
+          <p>Généraliser les pratiques de gestion écologique sur l'ensemble des espaces verts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLIDARITE -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">🤝</div>
+        <h2>Solidarité & Vivre ensemble</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Renforcer les liens sociaux et ne laisser personne au bord du chemin.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Maison des Solidarités</h4>
+          <p>Créer un guichet unique regroupant CCAS, aide sociale, accès aux droits et permanences associatives.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Épicerie solidaire 2.0</h4>
+          <p>Agrandir l'épicerie sociale et proposer des ateliers cuisine anti-gaspi.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Soutien aux aidants</h4>
+          <p>Développer les solutions de répit et d'accompagnement pour les aidants familiaux.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SANTE -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">🏥</div>
+        <h2>Santé & Bien-être</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Garantir l'accès aux soins pour tous et promouvoir la prévention.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Ouvrir la Maison de Santé</h4>
+          <p>Inaugurer la Maison de Santé pluriprofessionnelle avenue de Venaria avec médecins, infirmiers, kinés.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Bus santé mobile</h4>
+          <p>Mettre en place des permanences de prévention itinérantes dans les quartiers.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Sport-santé sur ordonnance</h4>
+          <p>Développer les partenariats avec les associations sportives pour le sport adapté.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENFANCE -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">👶</div>
+        <h2>Enfance & Jeunesse</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Accompagner les familles et donner toutes leurs chances aux jeunes Vizillois.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>10 places de crèche supplémentaires</h4>
+          <p>Agrandir la capacité d'accueil de la crèche municipale pour répondre à la demande.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Maison des Jeunes rénovée</h4>
+          <p>Réhabiliter et moderniser les locaux dédiés aux 11-25 ans avec espace numérique.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Restauration scolaire de qualité</h4>
+          <p>Maintenir la tarification sociale et augmenter la part de produits bio et locaux dans les repas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CULTURE -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">🎭</div>
+        <h2>Culture & Patrimoine</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Faire rayonner Vizille et démocratiser l'accès à la culture.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Valoriser le Prieuré</h4>
+          <p>Achever la restauration et créer un parcours de visite du monument historique.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Médiathèque 3ème lieu</h4>
+          <p>Transformer la médiathèque en espace polyvalent : co-working, ateliers, fablab.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Soutien aux Estivales</h4>
+          <p>Pérenniser et développer le festival estival avec de nouvelles scènes en plein air.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ECONOMIE -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">💼</div>
+        <h2>Économie & Emploi</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Soutenir les commerces locaux et accompagner les créateurs d'emploi.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Accueillir l'Alliance Textile</h4>
+          <p>Accompagner l'installation du projet mixte logements/commerces sur le site de l'ancienne usine.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Pépinière d'entreprises</h4>
+          <p>Créer des locaux à loyer modéré pour les jeunes entrepreneurs et artisans.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Acheter local</h4>
+          <p>Privilégier les fournisseurs locaux dans les marchés publics de la commune.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECURITE -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">🛡️</div>
+        <h2>Sécurité & Tranquillité</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Garantir la tranquillité publique et prévenir les incivilités.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Achever le dispositif de vidéoprotection</h4>
+          <p>Finaliser le maillage complet de la commune avec l'installation des dernières caméras sur les points stratégiques identifiés.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Éclairage intelligent</h4>
+          <p>Moderniser l'éclairage public dans les zones sensibles avec des dispositifs à détection de présence.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Médiation et prévention</h4>
+          <p>Renforcer la présence de médiateurs et développer les actions de prévention auprès des jeunes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SENIORS -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">👴</div>
+        <h2>Seniors & Bien vieillir</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Permettre à chacun de vieillir sereinement à Vizille.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Accessibilité renforcée</h4>
+          <p>Poursuivre la mise en accessibilité des bâtiments publics et des cheminements piétons.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Résidence intergénérationnelle</h4>
+          <p>Étudier la création d'un habitat partagé favorisant les liens entre générations.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Portage de repas et visites</h4>
+          <p>Maintenir et développer les services à domicile pour les personnes isolées.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILITE -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">🚌</div>
+        <h2>Mobilités & Déplacements</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Faciliter les déplacements doux et améliorer les transports en commun.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Plan vélo ambitieux</h4>
+          <p>Créer 5 km de pistes cyclables sécurisées reliant les quartiers au centre-ville.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Navette centre-ville gratuite</h4>
+          <p>Mettre en place une navette électrique gratuite desservant commerces et services.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Bornes de recharge</h4>
+          <p>Installer 10 bornes de recharge électrique sur les parkings publics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEMOCRATIE -->
+  <div class="theme-section">
+    <div class="container">
+      <div class="theme-header">
+        <div class="icon">🗣️</div>
+        <h2>Démocratie locale & Participation</h2>
+      </div>
+      <p style="color: var(--gray); max-width: 700px;">Associer les habitants aux décisions qui les concernent.</p>
+      
+      <div class="propositions">
+        <div class="proposition-card">
+          <span class="priorite priorite-haute">Priorité 2026</span>
+          <h4>Budget participatif</h4>
+          <p>Permettre aux habitants de proposer et voter des projets financés sur une enveloppe dédiée.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-moyenne">2027-2028</span>
+          <h4>Conseils de quartier</h4>
+          <p>Créer des instances de concertation régulières dans chaque secteur de la commune.</p>
+        </div>
+        <div class="proposition-card">
+          <span class="priorite priorite-continue">Action continue</span>
+          <h4>Transparence des décisions</h4>
+          <p>Diffuser les comptes-rendus des conseils municipaux et les données budgétaires en open data.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>Participez à la construction du projet</h2>
+      <h2>Construisons ce projet ensemble</h2>
       <p>Vos idées et propositions sont les bienvenues</p>
-      <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="bilan.html" class="btn btn-outline">Voir le bilan 2020-2026</a>
+        <a href="contact.html" class="btn btn-outline">Nous contacter</a>
+      </div>
     </div>
   </section>
 
-  <footer><div class="container"><div class="footer-bottom"><p>© 2025 Vizille en Mouvement</p></div></div></footer>
-  <script>document.querySelector('.menu-toggle').addEventListener('click', function() { document.getElementById('nav-menu').classList.toggle('active'); });</script>
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 Vizille en Mouvement</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>
