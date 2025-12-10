@@ -13,41 +13,68 @@
   <style>
     :root { --font-main: 'Source Sans 3', sans-serif; }
     
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .team-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .team-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      object-position: top;
+    }
+    
+    .team-card-content {
+      padding: 1.5rem;
+    }
+    
+    .team-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: var(--dark);
+    }
+    
+    .team-card .role {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .team-card .bio {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+    
     .team-intro {
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
-      padding: 3rem 0;
-    }
-    
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-    
-    .value-card {
-      background: var(--white);
-      padding: 2rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-    
-    .value-card h4 {
-      color: var(--primary);
-      margin: 1rem 0 0.5rem;
-    }
-    
-    .value-icon {
-      font-size: 2.5rem;
+      padding: 2rem 0;
     }
     
     .charte-section {
       background: var(--primary);
       color: var(--white);
-      padding: 4rem 0;
+      padding: 3rem 0;
     }
     
     .charte-section h2 {
@@ -85,6 +112,58 @@
       font-size: 0.95rem;
       margin: 0;
     }
+    
+    /* Tête de liste mise en avant */
+    .team-leader {
+      grid-column: 1 / -1;
+      display: flex;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    
+    .team-leader img {
+      width: 250px;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .team-leader-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .team-leader h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .team-leader .role {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .team-leader .bio {
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    
+    @media (max-width: 600px) {
+      .team-leader {
+        flex-direction: column;
+      }
+      .team-leader img {
+        width: 100%;
+        height: 250px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -106,44 +185,120 @@
           <li><a href="../index.html">Accueil</a></li>
           <li><a href="bilan.html">Le Bilan</a></li>
           <li><a href="projet.html">Notre Projet</a></li>
-          <li><a href="equipe.html">L'Équipe</a></li>
+          <li><a href="equipe.html" class="active">L'Équipe</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- MINI BANDEAU SLOGAN -->
-  <div style="background: var(--primary); color: white; text-align: center; padding: 0.6rem; margin-top: 75px; font-size: 0.9rem; font-style: italic;">
+  <!-- BANDEAU SLOGAN -->
+  <div style="background: var(--primary); color: white; text-align: center; padding: 0.8rem; margin-top: 75px; font-size: 1.1rem; font-style: italic; font-weight: 500;">
     Ensemble pour une ville dynamique et solidaire
   </div>
 
-  <section class="page-hero" style="margin-top: 0;" style="padding-top: 1rem; padding-bottom: 2rem;">
+  <!-- TITRE PAGE -->
+  <section style="background: var(--light); padding: 2rem 0;">
     <div class="container" style="text-align: center;">
-      <p style="font-size: 0.95rem; color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Ensemble pour une ville dynamique et solidaire</p>
-    </div>
-  </section>
-  <section class="page-hero-content">
-    <div class="container">
-      <h1>L'Équipe</h1>
-      <p class="lead">Une équipe engagée pour Vizille</p>
+      <h1 style="margin: 0;">L'Équipe</h1>
     </div>
   </section>
 
+  <!-- TÊTE DE LISTE -->
   <section>
     <div class="container">
       <div class="team-intro">
-        <h2>Vizille en Mouvement</h2>
-        <p style="font-size: 1.1rem; color: var(--gray); margin-top: 1.5rem;">
-          Notre liste rassemble des femmes et des hommes de tous horizons, unis par l'envie de servir Vizille et ses habitants. Élus expérimentés et nouveaux visages, nous partageons les mêmes valeurs : l'écoute, la proximité, l'engagement pour le bien commun.
-        </p>
         <p style="font-size: 1.1rem; color: var(--gray);">
-          <em>Présentation détaillée de l'équipe à venir...</em>
+          Notre liste rassemble des femmes et des hommes de tous horizons, unis par l'envie de servir Vizille et ses habitants.
         </p>
+      </div>
+      
+      <div class="team-leader">
+        <img src="../images/maire.png" alt="Catherine Troton">
+        <div class="team-leader-content">
+          <h3>Catherine Troton</h3>
+          <p class="role">Tête de liste</p>
+          <p class="bio">Engagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d'écoute et de proximité au cœur de son action municipale.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- GRILLE ÉQUIPE -->
+  <section style="background: var(--light); padding: 3rem 0;">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Les colistiers</h2>
+      
+      <div class="team-grid">
+        
+        <div class="team-card">
+          <img src="../images/equipe1.jpg" alt="Humbert II">
+          <div class="team-card-content">
+            <h3>Humbert II</h3>
+            <p class="role">Finances</p>
+            <p class="bio">Dernier Dauphin du Viennois, il met son expérience au service de la gestion municipale.</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="../images/equipe6.jpg" alt="Louise Drevet">
+          <div class="team-card-content">
+            <h3>Louise Drevet</h3>
+            <p class="role">Culture & Patrimoine</p>
+            <p class="bio">Passionnée d'histoire locale, elle œuvre pour la valorisation du patrimoine vizillois.</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="../images/equipe2.jpg" alt="Henri Dumont">
+          <div class="team-card-content">
+            <h3>Henri Dumont</h3>
+            <p class="role">Sécurité & Prévention</p>
+            <p class="bio">Fort de son expérience, il s'engage pour la tranquillité publique.</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="../images/equipe3.jpg" alt="Bernard de Lesdiguières">
+          <div class="team-card-content">
+            <h3>Bernard de Lesdiguières</h3>
+            <p class="role">Urbanisme & Aménagement</p>
+            <p class="bio">Visionnaire, il accompagne les projets de transformation de la ville.</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="../images/equipe5.jpg" alt="Nicolas Beaumont">
+          <div class="team-card-content">
+            <h3>Nicolas Beaumont</h3>
+            <p class="role">Travaux & Voirie</p>
+            <p class="bio">Homme d'action, il veille à l'entretien et à la modernisation des équipements.</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="../images/equipe4.jpg" alt="Auguste Périer">
+          <div class="team-card-content">
+            <h3>Auguste Périer</h3>
+            <p class="role">Solidarité & Action sociale</p>
+            <p class="bio">Engagé auprès des plus fragiles, il porte les valeurs de solidarité.</p>
+          </div>
+        </div>
+        
+        <div class="team-card">
+          <img src="../images/equipe7.jpg" alt="Élisée Reclus">
+          <div class="team-card-content">
+            <h3>Élisée Reclus</h3>
+            <p class="role">Environnement & Transition</p>
+            <p class="bio">Géographe passionné, il défend une ville plus verte et durable.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARTE D'ENGAGEMENT -->
   <section class="charte-section">
     <div class="container">
       <h2>Notre Charte d'Engagement</h2>
@@ -196,62 +351,14 @@
             <p>Respecter les principes républicains</p>
           </div>
         </div>
-        
-        <div class="charte-item">
-          <span>👥</span>
-          <div>
-            <h4>Esprit Collectif</h4>
-            <p>Coopération et solidarité</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background: var(--light);">
-    <div class="container">
-      <div class="section-title">
-        <h2>Notre Contrat d'Action</h2>
-      </div>
-      
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-icon">💝</div>
-          <h4>Altruisme</h4>
-          <p>Agir pour l'intérêt général avant tout</p>
-        </div>
-        
-        <div class="value-card">
-          <div class="value-icon">📊</div>
-          <h4>Rigueur</h4>
-          <p>Gestion transparente et responsable des deniers publics</p>
-        </div>
-        
-        <div class="value-card">
-          <div class="value-icon">🗳️</div>
-          <h4>Démocratie</h4>
-          <p>Respect de l'opinion politique de chacun</p>
-        </div>
-        
-        <div class="value-card">
-          <div class="value-icon">🏗️</div>
-          <h4>Participation</h4>
-          <p>Co-construction des projets avec les habitants</p>
-        </div>
-        
-        <div class="value-card">
-          <div class="value-icon">✨</div>
-          <h4>Exemplarité</h4>
-          <p>Refus des attaques personnelles, débat d'idées</p>
-        </div>
       </div>
     </div>
   </section>
 
   <section class="cta-section">
     <div class="container">
-      <h2>Ensemble pour une ville dynamique et solidaire</h2>
-      <p>Rejoignez-nous dans cette aventure collective</p>
+      <h2>Rejoignez-nous</h2>
+      <p>Vous souhaitez vous engager pour Vizille ?</p>
       <a href="contact.html" class="btn btn-outline">Nous contacter</a>
     </div>
   </section>
@@ -259,7 +366,7 @@
   <footer>
     <div class="container">
       <div class="footer-bottom">
-        <p>© 2025 Vizille en Mouvement – <a href="../index.html" style="color: white;">Retour à l'accueil</a></p>
+        <p>© 2025 Vizille en Mouvement</p>
       </div>
     </div>
   </footer>
@@ -269,5 +376,6 @@
       document.getElementById('nav-menu').classList.toggle('active');
     });
   </script>
+
 </body>
 </html>
